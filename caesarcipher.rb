@@ -3,7 +3,6 @@
 def caesar_cipher(string, factor)
   #analisa cada elemento da string individualmente
   array_of_string = string.split('')
-  p array_of_string
   cripto_array = []
 
   array_of_string.each do |element|
@@ -33,16 +32,20 @@ def caesar_cipher(string, factor)
     cripto_array.push(element)  
 
   end
-
+  #retorna a string com a cripto apropriada
   cripto_array.join("")
 
 
 end
 
-teste = caesar_cipher("aaaa eh um teste!!!", 5)
+puts "Digite um texto para ser criptografado:"
+
+text = gets.chomp
+
+puts "Agora digite um fator criptografico numerico inteiro"
+
+factor = gets.to_i
+
+teste = caesar_cipher(text, factor)
 
 puts teste
-
-
-#se o elemento for uma letra, executa o fator de alteracao, verificando ainda se eh maiusculo ou minisculo
-#retorna a string com a cripto apropriada
